@@ -1,28 +1,41 @@
-# lista = ["mirim", "arara"]
-lista = ["mirim", "Banana"]
-# lista = []
+lista = ["mirim", "arara"]
+lista2 = ["mirim", "Banana"]
+lista3 = []
+palavra = "Arara"
+frase = "Subi no Onibus"
+numero = 1
+numero2 = [1, 1]
 
-def ePalindromo(lista):
+
+def ePalindromo(palavra):
+    word = ""
     resultados = []
-    if len(lista) <= 0:
-        return False
-    for w in lista:
-        if w in w[::-1]:
+    if type(palavra) != list:
+        if not type(palavra) is str:
+                return None
+        word = "".join(palavra.lower().split())
+        if word == word[::-1]:
             resultados.append(True)
-        else:
-            resultados.append(False)
-
-        # Outro jeito de fazer:
-        # reverso = ""
-        # print(w)
-        # for l in w[::-1]:
-        #     reverso += l
-        # print(reverso)
-        # if w == reverso:
-        #     resultados.append(True)
-        # else:
-        #     resultados.append(False)
+    else:
+        word = palavra
+        # verifica se a lista possui 1 item
+        if len(word) <= 0:
+            return None
+        for w in word:
+            if not type(w) is str:
+                return None
+            if w in w[::-1]:
+                resultados.append(True)
+            else:
+                resultados.append(False)
 
     return resultados
 
+
 print(ePalindromo(lista))
+print(ePalindromo(lista2))
+print(ePalindromo(lista3))
+print(ePalindromo(palavra))
+print(ePalindromo(frase))
+print(ePalindromo(numero))
+print(ePalindromo(numero2))
