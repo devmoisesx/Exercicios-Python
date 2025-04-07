@@ -15,16 +15,19 @@ lista14 = 123
 lista15 = ["roma", "amor", "roma"]
 
 
-def eAnagrama(lista):
+def eAnagrama(lista: list):
     # Verifica se é uma lista
     if type(lista) != list:
         return None
+    
     # Verifica se a lista possui 2 palavras
     if len(lista) <= 0 or len(lista) <= 1 or len(lista) > 2:
         return None
+    
     # Verifica se o item é string
     if type(lista[0]) != str and type(lista[1]) != str:
         return None
+    
     # Verifica se a lista possui string vazia
     for w in lista:
         if w == "" or w == " ":
